@@ -17,12 +17,10 @@ const employees = [
   }
 ]
 
-const cities = []
+const cities = new Set()
 
 employees.forEach(e => {
-  if (!cities.includes(e.city)) {
-    cities.push(e.city)
-  }
+  cities.add(e.city)
 })
 // demo comment 1
 // demo comment 2
