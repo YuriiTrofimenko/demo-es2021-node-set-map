@@ -1,6 +1,28 @@
+const employees = [
+  {
+    name: 'John',
+    city: 'NewYork'
+  },
+  {
+    name: 'Jahn',
+    city: 'Paris'
+  },
+  {
+    name: 'Bill',
+    city: 'London'
+  },
+  {
+    name: 'Mary',
+    city: 'NewYork'
+  }
+]
+
 const cities = []
-cities.push('NewYork')
-cities.push('Paris')
-cities.push('London')
-cities.push('NewYork')
+
+employees.forEach(e => {
+  if (!cities.includes(e.city)) {
+    cities.push(e.city)
+  }
+})
+
 export { cities }
