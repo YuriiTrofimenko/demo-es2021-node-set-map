@@ -27,11 +27,31 @@ function fact (n) {
 } // fact(2) = 2 * 1 = fact(2-1) * 2 = 1 * 2
 
 console.log('Fib')
-for (let i = 1; i < 45; i++) {
-  console.log(fib(i))
-}
+new Promise((resolve, reject) => {
+  try {
+    const results = []
+    for (let i = 1; i < 45; i++) {
+      results.push(fib(i))
+    }
+    resolve(results)
+  } catch (error) {
+    reject(error)
+  }
+}).then((results) => console.log(results))
+  .catch((error) => console.log(error))
+  .finally(() => console.log('End Fib'))
 
 console.log('Fact')
-for (let i = 1; i < 45; i++) {
-  console.log(fact(i))
-}
+new Promise((resolve, reject) => {
+  try {
+    const results = []
+    for (let i = 1; i < 45; i++) {
+      results.push(fact(i))
+    }
+    resolve(results)
+  } catch (error) {
+    reject(error)
+  }
+}).then((results) => console.log(results))
+.catch((error) => console.log(error))
+.finally(() => console.log('End Fact'))
